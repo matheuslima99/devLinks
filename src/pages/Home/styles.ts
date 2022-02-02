@@ -25,6 +25,26 @@ export const LogoArea = styled.div`
     font-size: 16px;
     margin: 10px 0 20px 0;
   }
+
+  @media (max-width: 650px) {
+    img {
+      width: 130px;
+    }
+
+    h1 {
+      font-size: 40px;
+    }
+
+    span {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 450px) {
+    img{
+      width: 110px;
+    }
+  }
 `;
 export const InputArea = styled.div`
   max-width: 500px;
@@ -66,5 +86,9 @@ export const InputArea = styled.div`
     border: none;
     border-radius: 6px;
     outline: none;
+  }
+
+  @media (max-width: 650px) {
+    width: 90%;
   }
 `;
