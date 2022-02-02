@@ -5,7 +5,6 @@ export const Container = styled.div`
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
 `;
 
@@ -14,6 +13,7 @@ export const LogoArea = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 50px;
 
   img {
     width: 170px;

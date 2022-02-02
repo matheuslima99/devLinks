@@ -38,6 +38,9 @@ export const ListItem = styled.div`
        border: none;
        border-radius: 6px;
        color: #fff;
+       white-space: nowrap;
+       overflow: hidden;
+       text-overflow: ellipses;
        text-align: left;
        padding: 12px;
        font-size: 18px;
@@ -49,7 +52,7 @@ export const ListItem = styled.div`
        }
 
        :hover {
-           transform: scale(1.02);
+           transform: scale(1.01);
        }
     }
 
