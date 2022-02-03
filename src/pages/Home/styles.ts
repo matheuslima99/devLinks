@@ -14,6 +14,7 @@ export const LogoArea = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 50px;
+  margin-bottom: 15px;
 
   img {
     width: 150px;
@@ -24,12 +25,6 @@ export const LogoArea = styled.div`
     color: #fff;
   }
 
-  span {
-    color: #fff;
-    font-size: 16px;
-    margin: 10px 0 16px 0;
-  }
-
   @media (max-width: 650px) {
     img {
       width: 130px;
@@ -37,10 +32,6 @@ export const LogoArea = styled.div`
 
     h1 {
       font-size: 40px;
-    }
-
-    span {
-      font-size: 14px;
     }
   }
 
@@ -58,14 +49,19 @@ const slideY = keyframes`
   to{
     transform: translateY(0px)
   }
-`
+`;
 
 export const InputArea = styled.div`
   max-width: 500px;
+  text-align: center;
   width: 100%;
-  margin-top: 10px;
+
   margin-bottom: 20px;
   animation: ${slideY} 1.5s;
+
+  span {
+    color: #fff;
+  }
 
   div {
     width: 100%;
@@ -73,7 +69,7 @@ export const InputArea = styled.div`
     display: flex;
     align-items: center;
     border-radius: 6px;
-    margin-bottom: 12px;
+    margin: 12px 0px;
     padding: 4px 4px 4px 8px;
     background-color: rgba(255, 255, 255, 0.15);
   }
@@ -112,6 +108,9 @@ export const InputArea = styled.div`
 
   @media (max-width: 650px) {
     width: 90%;
+
+    span {
+      font-size: 14px;
+    }
   }
 `;
-

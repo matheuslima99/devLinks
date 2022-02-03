@@ -15,18 +15,22 @@ export const Container = styled.div`
   background-color: #fff;
   padding: 20px;
   border-radius: 6px;
-  overflow: hidden;
   animation: ${showModal} 1s;
 
   div {
     width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: wrap;
   }
-
+  
   span {
+    word-wrap: break-word;
+    width: 100%;
     color: #a7a7a7;
+
+    @media (max-width: 450px) {
+      font-size: 15px;
+    }
+
   }
 
   @media (max-width: 750px) {
@@ -46,6 +50,19 @@ export const HeaderModal = styled.div`
     outline: none;
     background-color: transparent;
   }
+
+  @media(max-width: 450px) {
+    h2{
+      font-size: 20px;
+    }
+  }
+
+  @media(max-width: 650px) {
+    h2{
+      font-size: 23px;
+    }
+  }
+
 `;
 
 export const ModalLink = styled.button`
