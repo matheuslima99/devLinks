@@ -16,7 +16,7 @@ export const LogoArea = styled.div`
   margin-top: 50px;
 
   img {
-    width: 170px;
+    width: 150px;
   }
 
   h1 {
@@ -63,8 +63,9 @@ const slideY = keyframes`
 export const InputArea = styled.div`
   max-width: 500px;
   width: 100%;
-  margin: 15px 0;
-  animation: ${slideY} 2s;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  animation: ${slideY} 1.5s;
 
   div {
     width: 100%;
@@ -86,6 +87,7 @@ export const InputArea = styled.div`
     outline: none;
     margin-left: 10px;
     background: transparent;
+    padding-right: 5px;
 
     ::placeholder {
       color: rgba(255, 255, 255, 0.35);
