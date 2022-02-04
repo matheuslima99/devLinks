@@ -8,6 +8,7 @@ import { Modal } from "../../components/Modal";
 import { ILink } from "../../types/iLink";
 
 import { api } from "../../services/api";
+import { saveLink } from "../../services/storeLinks";
 
 export const Home = () => {
   const [link, setLink] = useState("");
@@ -15,6 +16,11 @@ export const Home = () => {
   const [data, setData] = useState<any>({});
 
   const handleShortLink = async () => {
+    if (link.trim() === "") {
+      alert("Por favor, coloque a sua URL");
+      return;
+    }
+
     try {
       const response = await api.post<ILink>("/shorten", {
         long_url: link,
@@ -23,8 +29,11 @@ export const Home = () => {
       setData(response.data);
       setShowModal(true);
       setLink("");
+
+      saveLink("@savedlinks", response.data);
     } catch {
-      alert("Ops, aconteceu algum erro...");
+      alert("Ops, parece que algo deu errado...");
+      setLink("");
     }
   };
 

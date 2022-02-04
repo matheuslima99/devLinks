@@ -1,9 +1,27 @@
 import * as C from "./styles";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { FiArrowLeft, FiLink, FiTrash } from "react-icons/fi";
+import { FiArrowLeft } from "react-icons/fi";
+
+import { LinkItem } from "../../components/LinkItem";
+
+import { ILink } from "../../types/iLink";
+
+import { getLinksSave } from "../../services/storeLinks";
 
 export const Links = () => {
+  const [data, setData] = useState<any>([]);
+
+  useEffect(() => {
+    const getLinks = async () => {
+      const response = await getLinksSave("@savedlinks");
+
+      setData(response);
+    };
+
+    getLinks();
+  }, []);
+
   return (
     <C.Container>
       <C.Area>
@@ -15,23 +33,11 @@ export const Links = () => {
           <h1>Meus links</h1>
         </C.HeaderLinks>
 
-        <C.ListItem>
-          <button>
-            <FiLink color="#fff" size={18} />
-            https://sujeitoprogramador.com https://sujeitoprogramador.com
-            https://sujeitoprogramador.com https://sujeitoprogramador.com
-            https://sujeitoprogramador.com
-          </button>
-
-          <FiTrash color="#f00" size={25} />
-        </C.ListItem>
-
-        <C.ListItem>
-          <button>
-            <FiLink color="#fff" size={18} />
-            https://sujeitoprogramador.com
-          </button>
-        </C.ListItem>
+        <C.LinksArea>
+          {data.map((links: ILink) => {
+            return <LinkItem key={links.id} data={links} />;
+          })}
+        </C.LinksArea>
       </C.Area>
     </C.Container>
   );

@@ -81,6 +81,7 @@ export const InputArea = styled.div`
     color: #fff;
     border: none;
     outline: none;
+    overflow: hidden;
     margin-left: 10px;
     background: transparent;
     padding-right: 5px;

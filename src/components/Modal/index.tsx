@@ -9,6 +9,11 @@ type Props = {
 };
 
 export const Modal = ({ closeModal, data }: Props) => {
+  const copyLink = async () => {
+    await navigator.clipboard.writeText(data.link);
+    alert("URL Copiada com sucesso!");
+  };
+
   return (
     <C.Container>
       <C.HeaderModal>
@@ -20,7 +25,7 @@ export const Modal = ({ closeModal, data }: Props) => {
       <div>
         <span>{data.long_url}</span>
       </div>
-      <C.ModalLink>
+      <C.ModalLink onClick={copyLink}>
         {data.link}
         <FiClipboard className="la" color="#fff" size={18} />
       </C.ModalLink>
