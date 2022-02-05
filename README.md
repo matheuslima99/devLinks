@@ -19,6 +19,7 @@
 -->
 
 
+
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -69,7 +70,11 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+ <a href="">
+    <img src="./github/assets/Home.png" 
+    alt="Logo">
+  
+  </a>
 
 It was built a application using React JS as framework and consuming a api from Bitly Api. Also used libraries how styled-components, axios, react icons, among others.
 
