@@ -11,6 +11,7 @@ import { getLinksSave, deleteLink } from "../../services/storeLinks";
 
 export const Links = () => {
   const [data, setData] = useState<any>([]);
+  const [haveLink, setHaveLink] = useState(true);
 
   const copyLink = async (link: string) => {
     await navigator.clipboard.writeText(link);
@@ -20,12 +21,20 @@ export const Links = () => {
   const handleDelete = (links: ILink) => {
     let result = deleteLink(data, links);
 
-    setData(result)
+    if (result.length === 0) {
+      setHaveLink(false);
+    }
+
+    setData(result);
   };
 
   useEffect(() => {
     const getLinks = async () => {
       const response = await getLinksSave("@savedlinks");
+
+      if (response.length === 0) {
+        setHaveLink(false);
+      }
 
       setData(response);
     };
@@ -44,18 +53,24 @@ export const Links = () => {
           <h1>Meus links</h1>
         </C.HeaderLinks>
 
-        <C.LinksArea>
-          {data.map((links: ILink) => {
-            return (
-              <LinkItem
-                key={links.id}
-                data={links}
-                copyLink={() => copyLink(links.link)}
-                linkDel={() => handleDelete(links)}
-              />
-            );
-          })}
-        </C.LinksArea>
+        {haveLink ? (
+          <C.LinksArea>
+            {data.map((links: ILink) => {
+              return (
+                <LinkItem
+                  key={links.id}
+                  data={links}
+                  copyLink={() => copyLink(links.link)}
+                  linkDel={() => handleDelete(links)}
+                />
+              );
+            })}
+          </C.LinksArea>
+        ) : (
+          <C.NoLinksContainer>
+            <h3>Sua lista está vazia...</h3>
+          </C.NoLinksContainer>
+        )}
       </C.Area>
     </C.Container>
   );
