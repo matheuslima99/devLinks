@@ -84,8 +84,6 @@ It was built a application using React JS as framework and consuming a api from 
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
 * [Typescript](https://www.typescriptlang.org/)
 * [React.js](https://reactjs.org/)
 * [Styled Components](https://styled-components.com/)
