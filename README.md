@@ -70,7 +70,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
- <a href="">
+ <a href="https://github.com/matheuslima99/devLinks">
     <img src="./github/assets/Home.png" 
     alt="Logo">
   
