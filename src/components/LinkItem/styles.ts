@@ -1,10 +1,21 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const slideL = keyframes`
+  from{
+    transform: translateY(10px);
+  }
+  to{
+    transform: translatey(0px);
+  }
+`;
 
 export const Container = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
   margin-bottom: 12px;
+  transition: transform 0.7s;
+  animation: ${slideL} 1s;
 
   .copy-button {
     flex: 1;
@@ -30,4 +41,7 @@ export const Container = styled.div`
       margin-left: 6px;
   }
 
+  &:hover{
+    transform: scale(1.01);
+  }
 `;

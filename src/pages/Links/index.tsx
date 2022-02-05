@@ -7,10 +7,21 @@ import { LinkItem } from "../../components/LinkItem";
 
 import { ILink } from "../../types/iLink";
 
-import { getLinksSave } from "../../services/storeLinks";
+import { getLinksSave, deleteLink } from "../../services/storeLinks";
 
 export const Links = () => {
   const [data, setData] = useState<any>([]);
+
+  const copyLink = async (link: string) => {
+    await navigator.clipboard.writeText(link);
+    alert("URL copiada com sucesso!");
+  };
+
+  const handleDelete = (links: ILink) => {
+    let result = deleteLink(data, links);
+
+    setData(result)
+  };
 
   useEffect(() => {
     const getLinks = async () => {
@@ -35,7 +46,14 @@ export const Links = () => {
 
         <C.LinksArea>
           {data.map((links: ILink) => {
-            return <LinkItem key={links.id} data={links} />;
+            return (
+              <LinkItem
+                key={links.id}
+                data={links}
+                copyLink={() => copyLink(links.link)}
+                linkDel={() => handleDelete(links)}
+              />
+            );
           })}
         </C.LinksArea>
       </C.Area>

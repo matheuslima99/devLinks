@@ -47,7 +47,7 @@ export const Container = styled.div`
     background-color: #fff;
     transition: transform 0.7s;
 
-    :hover {
+    &:hover {
       transform: scale(1.05);
     }
   }

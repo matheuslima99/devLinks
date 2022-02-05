@@ -1,3 +1,4 @@
+import { link } from "fs";
 import { ILink } from "../types/iLink";
 
 export const getLinksSave = (key: string) => {
@@ -17,4 +18,13 @@ export const saveLink = (key: string, newlink: ILink) => {
 
   linksStored.push(newlink);
   localStorage.setItem(key, JSON.stringify(linksStored));
+};
+
+export const deleteLink = (data: any[], Links: ILink) => {
+  const myLinks = data.filter((element) => {
+    return element.id !== Links.id;
+  });
+
+  localStorage.setItem("@savedlinks", JSON.stringify(myLinks));
+  return myLinks;
 };

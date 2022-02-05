@@ -44,7 +44,7 @@ export const LogoArea = styled.div`
 
 const slideY = keyframes`
   from{
-    transform: translateY(90px)
+    transform: translateY(50px)
   } 
   to{
     transform: translateY(0px)
@@ -86,7 +86,7 @@ export const InputArea = styled.div`
     background: transparent;
     padding-right: 5px;
 
-    ::placeholder {
+    &::placeholder {
       color: rgba(255, 255, 255, 0.35);
     }
   }
@@ -102,7 +102,7 @@ export const InputArea = styled.div`
     outline: none;
     transition: transform 0.7s;
 
-    :hover {
+    &:hover {
       transform: scale(1.05);
     }
   }

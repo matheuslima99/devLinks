@@ -25,6 +25,19 @@ export const HeaderLinks = styled.div`
   h1 {
     color: #fff;
   }
+
+  @media (max-width: 650px) {
+    h1{
+      font-size: 28px;
+    }
+  }
+
+  @media (max-width: 390px) {
+    h1{
+      font-size: 25px;
+    }
+  }
+
 `;
 
 export const LinksArea = styled.div`
