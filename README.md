@@ -70,7 +70,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
- <a href="">
+ <a href="https://github.com/matheuslima99/devLinks">
     <img src="./github/assets/Home.png" 
     alt="Logo">
   
@@ -83,8 +83,6 @@ It was built a application using React JS as framework and consuming a api from 
 
 
 ### Built With
-
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
 * [Typescript](https://www.typescriptlang.org/)
 * [React.js](https://reactjs.org/)
